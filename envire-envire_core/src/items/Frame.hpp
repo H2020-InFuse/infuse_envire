@@ -40,8 +40,8 @@
 #include "RandomGenerator.hpp"
 #include <boost_serialization/BoostTypes.hpp>
 #include <boost_serialization/DynamicSizeSerialization.hpp>
-#include <envire_core/serialization/Serialization.hpp>
-#include <envire_core/util/Demangle.hpp>
+#include "../serialization/Serialization.hpp"
+#include "../util/Demangle.hpp"
 
 namespace envire { namespace core
 {

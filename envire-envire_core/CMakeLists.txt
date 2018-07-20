@@ -44,11 +44,11 @@ set(HEADERS
 #src/items/AlignedBoundingBox.hpp
 #src/items/BoundingVolume.hpp
     src/items/Environment.hpp
-src/items/Frame.hpp
+    src/items/Frame.hpp
 src/items/ItemBase.hpp
 #src/items/Item.hpp
 #src/items/ItemMetadata.hpp
-#src/items/RandomGenerator.hpp
+src/items/RandomGenerator.hpp
 #src/items/SpatialItem.hpp
 #src/items/SpatioTemporal.hpp
 src/items/Transform.hpp
