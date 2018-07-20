@@ -61,8 +61,8 @@ set(HEADERS
 #src/Angle.hpp
 #src/CircularBuffer.hpp
 #src/Deprecated.hpp
-src/Eigen.hpp
-src/Float.hpp
+    src/Eigen.hpp
+    src/Float.hpp
 #src/JointLimitRange.hpp
 #src/JointLimits.hpp
 #src/JointState.hpp
