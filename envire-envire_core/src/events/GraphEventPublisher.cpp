@@ -31,8 +31,8 @@
  *      Author: aboeckmann
  */
 #include <algorithm>
-#include <envire_core/events/GraphEventPublisher.hpp>
-#include <envire_core/events/GraphEventSubscriber.hpp>
+#include "../events/GraphEventPublisher.hpp"
+#include "../events/GraphEventSubscriber.hpp"
 #include <cassert>
 
 using namespace envire::core;

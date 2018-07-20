@@ -4,9 +4,9 @@ project (envire-core VERSION 0.1)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
 set(SOURCES
-#src/events/GraphEvent.cpp
+src/events/GraphEvent.cpp
 #src/events/GraphEventDispatcher.cpp
-src/events/GraphEventPublisher.cpp
+    src/events/GraphEventPublisher.cpp
 #src/events/GraphEventQueue.cpp
 #src/events/GraphEventSubscriber.cpp
      src/graph/EnvireGraph.cpp
@@ -21,9 +21,9 @@ src/util/Demangle.cpp
 )
 
 set(HEADERS
-#src/events/GraphEvent.hpp
+src/events/GraphEvent.hpp
 #src/events/GraphEventDispatcher.hpp
-src/events/GraphEventPublisher.hpp
+    src/events/GraphEventPublisher.hpp
 #src/events/GraphEventQueue.hpp
 #src/events/GraphEventSubscriber.hpp
 #src/events/GraphItemEventDispatcher.hpp
