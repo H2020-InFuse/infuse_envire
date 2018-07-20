@@ -9,11 +9,11 @@ set(SOURCES
     src/events/GraphEventPublisher.cpp
 #src/events/GraphEventQueue.cpp
     src/events/GraphEventSubscriber.cpp
-     src/graph/EnvireGraph.cpp
+    src/graph/EnvireGraph.cpp
 #src/graph/Path.cpp
 #src/graph/TreeView.cpp
 #src/items/AlignedBoundingBox.cpp
-#src/items/ItemBase.cpp
+src/items/ItemBase.cpp
 #src/items/ItemMetadata.cpp
 #src/plugin/ClassLoader.cpp
 #src/serialization/Serialization.cpp
@@ -45,7 +45,7 @@ src/graph/TreeView.hpp
 #src/items/BoundingVolume.hpp
 #src/items/Environment.hpp
 #src/items/Frame.hpp
-#src/items/ItemBase.hpp
+src/items/ItemBase.hpp
 #src/items/Item.hpp
 #src/items/ItemMetadata.hpp
 #src/items/RandomGenerator.hpp

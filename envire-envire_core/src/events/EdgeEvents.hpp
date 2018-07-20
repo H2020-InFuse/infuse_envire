@@ -26,9 +26,9 @@
 
 #pragma once
 
-#include <envire_core/items/ItemBase.hpp>
-#include <envire_core/graph/GraphTypes.hpp>
-#include <envire_core/events/GraphEvent.hpp>
+#include "../items/ItemBase.hpp"
+#include "../graph/GraphTypes.hpp"
+#include "GraphEvent.hpp"
 
 namespace envire { namespace core
 {
