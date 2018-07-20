@@ -56,7 +56,7 @@ set(HEADERS
 #src/plugin/Plugin.hpp
 #src/serialization/BinaryBufferHelper.hpp
 #src/serialization/ItemHeader.hpp
-src/serialization/SerializableConcept.hpp
+    src/serialization/SerializableConcept.hpp
 #src/serialization/SerializationHandle.hpp
 #src/serialization/Serialization.hpp
 #src/serialization/SerializationRegistration.hpp
