@@ -28,19 +28,19 @@
 
 #include <type_traits>
 
-#include <envire_core/events/GraphEventPublisher.hpp>
-#include <envire_core/events/FrameEvents.hpp>
-#include <envire_core/events/EdgeEvents.hpp>
+#include "../events/GraphEventPublisher.hpp"
+#include "../events/FrameEvents.hpp"
+#include "../events/EdgeEvents.hpp"
 
 #include <boost/graph/filtered_graph.hpp>
 #include <boost/graph/copy.hpp>
 #include <boost/concept_check.hpp>
 
-#include <envire_core/graph/GraphTypes.hpp>
-#include <envire_core/graph/TreeView.hpp>
-#include <envire_core/graph/GraphExceptions.hpp>
-#include <envire_core/graph/GraphVisitors.hpp>
-#include <envire_core/graph/Path.hpp>
+#include "../graph/GraphTypes.hpp"
+#include "../graph/TreeView.hpp"
+#include "../graph/GraphExceptions.hpp"
+#include "../graph/GraphVisitors.hpp"
+#include "../graph/Path.hpp"
 
 
 namespace envire { namespace core
