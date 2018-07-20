@@ -35,8 +35,8 @@
 #include <boost_serialization/BaseTypes.hpp>
 #include <boost/format.hpp>
 
-#include <base/Time.hpp>
-#include <base/TransformWithCovariance.hpp>
+#include <base-types/Time.hpp>
+#include <base-types/TransformWithCovariance.hpp>
 
 namespace envire { namespace core
 {
