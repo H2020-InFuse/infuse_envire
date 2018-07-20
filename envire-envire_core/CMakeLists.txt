@@ -16,7 +16,7 @@ set(SOURCES
     src/items/ItemBase.cpp
 #src/items/ItemMetadata.cpp
 #src/plugin/ClassLoader.cpp
-#src/serialization/Serialization.cpp
+    src/serialization/Serialization.cpp
     src/util/Demangle.cpp
 )
 
@@ -54,11 +54,11 @@ set(HEADERS
     src/items/Transform.hpp
 #src/plugin/ClassLoader.hpp
 #src/plugin/Plugin.hpp
-#src/serialization/BinaryBufferHelper.hpp
-#src/serialization/ItemHeader.hpp
+src/serialization/BinaryBufferHelper.hpp
+src/serialization/ItemHeader.hpp
     src/serialization/SerializableConcept.hpp
-#src/serialization/SerializationHandle.hpp
-#src/serialization/Serialization.hpp
+src/serialization/SerializationHandle.hpp
+    src/serialization/Serialization.hpp
 #src/serialization/SerializationRegistration.hpp
 #src/util/Exceptions.hpp
     src/util/Demangle.hpp

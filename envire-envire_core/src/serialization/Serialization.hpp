@@ -26,9 +26,9 @@
 
 #pragma once
 
-#include <envire_core/serialization/SerializationHandle.hpp>
-#include <envire_core/serialization/ItemHeader.hpp>
-#include <envire_core/items/ItemBase.hpp>
+#include "SerializationHandle.hpp"
+#include "ItemHeader.hpp"
+#include "../items/ItemBase.hpp"
 
 #include <boost/serialization/nvp.hpp>
 #include <glog/logging.h>

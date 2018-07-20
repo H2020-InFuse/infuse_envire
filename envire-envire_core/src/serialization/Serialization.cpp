@@ -28,12 +28,12 @@
 
 #include <boost/serialization/shared_ptr.hpp>
 #include <boost/serialization/nvp.hpp>
-#include <envire_core/serialization/BinaryBufferHelper.hpp>
+#include "BinaryBufferHelper.hpp"
 #include <boost/archive/binary_iarchive.hpp>
 #include <boost/archive/binary_oarchive.hpp>
 
 #ifdef CMAKE_ENABLE_PLUGINS
-    #include <envire_core/plugin/ClassLoader.hpp>
+    #include "../plugin/ClassLoader.hpp"
 #endif
 
 using namespace envire::core;
