@@ -4,8 +4,8 @@
  *
  */
 
-#include <base-logging/logging/logging_printf_style.h>
-#include <base-logging/logging/terminal_colors.h>
+#include "logging_printf_style.h"
+#include "terminal_colors.h"
 
 #include <stdio.h>
 #include <stdlib.h>
