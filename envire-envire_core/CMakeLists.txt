@@ -48,7 +48,7 @@ set(HEADERS
     src/items/ItemBase.hpp
 #src/items/Item.hpp
 #src/items/ItemMetadata.hpp
-src/items/RandomGenerator.hpp
+    src/items/RandomGenerator.hpp
 #src/items/SpatialItem.hpp
 #src/items/SpatioTemporal.hpp
 src/items/Transform.hpp
