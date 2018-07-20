@@ -26,8 +26,8 @@
 
 #pragma once
 #include "GraphTypes.hpp"
-#include "items/Transform.hpp"
-#include "events/GraphEventDispatcher.hpp"
+#include "../items/Transform.hpp"
+#include "../events/GraphEventDispatcher.hpp"
 #include <memory>
 
 namespace envire { namespace core
