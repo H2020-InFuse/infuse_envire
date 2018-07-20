@@ -4,7 +4,7 @@ project (base-types VERSION 0.1)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
 set(SOURCES
-#src/Angle.cpp
+    src/Angle.cpp
 #src/CircularBuffer.cpp
 #src/Deprecated.cpp
 #src/JointLimitRange.cpp
@@ -16,7 +16,7 @@ set(SOURCES
 #src/Matrix.cpp
 #src/NamedVector.cpp
 #src/Point.cpp
-src/Pose.cpp
+    src/Pose.cpp
 #src/Pressure.cpp
 #src/Singleton.cpp
 #src/Spline.cpp
@@ -58,7 +58,7 @@ src/Pose.cpp
 )
 
 set(HEADERS
-src/Angle.hpp
+    src/Angle.hpp
 #src/CircularBuffer.hpp
 #src/Deprecated.hpp
     src/Eigen.hpp
@@ -72,7 +72,7 @@ src/Angle.hpp
 #src/Matrix.hpp
 #src/NamedVector.hpp
 #src/Point.hpp
-src/Pose.hpp
+    src/Pose.hpp
 #src/Pressure.hpp
 #src/Singleton.hpp
 #src/Spline.hpp
@@ -114,19 +114,21 @@ src/Pose.hpp
 #src/templates/TimeStamped.hpp
 )
 
-pkg_check_modules(BASE_LOGGING REQUIRED base-logging)
-foreach(includepath ${BASE_LOGGING_INCLUDE_DIRS})
+find_package(PkgConfig)
+
+pkg_check_modules(EIGEN3 REQUIRED eigen3)
+foreach(includepath ${EIGEN3_INCLUDE_DIRS})
     include_directories(${includepath})
 endforeach()
-foreach(librarypath ${BASE_LOGGING_LIBRARY_DIRS})
+foreach(librarypath ${EIGEN3_LIBRARY_DIRS})
     link_directories(${librarypath})
 endforeach()
 
 set(LIBRARY_NAME base-types)
-set(DEPENDENCIES "base-logging")
+set(DEPENDENCIES "eigen3")
 add_library(${LIBRARY_NAME} SHARED ${SOURCES})
-target_link_libraries(${LIBRARY_NAMES}
-    ${BASE_LOGGING_LIBRARIES}
+target_link_libraries(${LIBRARY_NAME}
+    ${EIGEN3_LIBRARIES}
 )
 
 set(CMAKE_MODULE_PATH $ENV{CMAKE_MODULE_PATH})
