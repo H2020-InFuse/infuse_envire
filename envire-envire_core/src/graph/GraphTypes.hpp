@@ -43,9 +43,9 @@
 #include <boost/functional/hash.hpp> 
 #include <functional> //to be able to provide custom hash functions for std maps
 
-#include <envire_core/items/Environment.hpp>
-#include <envire_core/items/ItemBase.hpp>
-#include <envire_core/serialization/SerializableConcept.hpp>
+#include "../items/Environment.hpp"
+#include "../items/ItemBase.hpp"
+#include "../serialization/SerializableConcept.hpp"
 
 
 namespace envire { namespace core

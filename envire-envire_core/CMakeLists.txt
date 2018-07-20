@@ -36,14 +36,14 @@ set(HEADERS
 #src/graph/GraphDrawing.hpp
     src/graph/GraphExceptions.hpp
     src/graph/Graph.hpp
-src/graph/GraphTypes.hpp
+    src/graph/GraphTypes.hpp
 src/graph/GraphVisitors.hpp
 src/graph/Path.hpp
     src/graph/TransformGraph.hpp
 src/graph/TreeView.hpp
 #src/items/AlignedBoundingBox.hpp
 #src/items/BoundingVolume.hpp
-#src/items/Environment.hpp
+src/items/Environment.hpp
 src/items/Frame.hpp
 src/items/ItemBase.hpp
 #src/items/Item.hpp
@@ -56,7 +56,7 @@ src/items/Transform.hpp
 #src/plugin/Plugin.hpp
 #src/serialization/BinaryBufferHelper.hpp
 #src/serialization/ItemHeader.hpp
-#src/serialization/SerializableConcept.hpp
+src/serialization/SerializableConcept.hpp
 #src/serialization/SerializationHandle.hpp
 #src/serialization/Serialization.hpp
 #src/serialization/SerializationRegistration.hpp
