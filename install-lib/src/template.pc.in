@@ -1,0 +1,11 @@
+libdir=@CMAKE_INSTALL_PREFIX@/lib
+includedir=@CMAKE_INSTALL_PREFIX@/include
+
+Name: @LIBRARY_NAME@
+Description: .pc file for @LIBRARY_NAME@.
+Version: @PROJECT_VERSION@
+Requires: @DEPENDENCIES@
+
+Libs: -L${libdir} -l@LIBRARY_NAME@
+Cflags: -I${includedir}
+
