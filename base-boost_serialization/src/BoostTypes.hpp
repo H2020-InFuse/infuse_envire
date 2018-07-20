@@ -18,8 +18,9 @@
 #include <boost/serialization/array.hpp>
 
 #include <boost/container/container_fwd.hpp>
-#include <boost_serialization/DynamicSizeSerialization.hpp>
 #include <boost/serialization/utility.hpp>
+
+#include "DynamicSizeSerialization.hpp"
 
 namespace boost { namespace serialization
 {
