@@ -54,8 +54,8 @@ set(HEADERS
     src/items/Transform.hpp
 #src/plugin/ClassLoader.hpp
 #src/plugin/Plugin.hpp
-src/serialization/BinaryBufferHelper.hpp
-src/serialization/ItemHeader.hpp
+    src/serialization/BinaryBufferHelper.hpp
+    src/serialization/ItemHeader.hpp
     src/serialization/SerializableConcept.hpp
 src/serialization/SerializationHandle.hpp
     src/serialization/Serialization.hpp

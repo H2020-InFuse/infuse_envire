@@ -26,7 +26,7 @@
 
 #pragma once
 
-#include <envire_core/items/ItemBase.hpp>
+#include "../items/ItemBase.hpp"
 #include <boost/serialization/nvp.hpp>
 
 namespace envire { namespace core
