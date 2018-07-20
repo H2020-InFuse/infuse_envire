@@ -8,7 +8,7 @@ set(SOURCES
 #src/events/GraphEventDispatcher.cpp
     src/events/GraphEventPublisher.cpp
 #src/events/GraphEventQueue.cpp
-src/events/GraphEventSubscriber.cpp
+    src/events/GraphEventSubscriber.cpp
      src/graph/EnvireGraph.cpp
 #src/graph/Path.cpp
 #src/graph/TreeView.cpp
@@ -25,7 +25,7 @@ set(HEADERS
 #src/events/GraphEventDispatcher.hpp
     src/events/GraphEventPublisher.hpp
 #src/events/GraphEventQueue.hpp
-src/events/GraphEventSubscriber.hpp
+    src/events/GraphEventSubscriber.hpp
 #src/events/GraphItemEventDispatcher.hpp
 src/events/EdgeEvents.hpp
 src/events/FrameEvents.hpp

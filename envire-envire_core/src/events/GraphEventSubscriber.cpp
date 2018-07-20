@@ -24,8 +24,8 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#include <envire_core/events/GraphEventSubscriber.hpp>
-#include <envire_core/events/GraphEventPublisher.hpp>
+#include "GraphEventSubscriber.hpp"
+#include "GraphEventPublisher.hpp"
 #include <cassert>
 
 using namespace envire::core;
