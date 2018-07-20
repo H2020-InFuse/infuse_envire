@@ -25,8 +25,8 @@
 //
 
 #include "Path.hpp"
-#include <envire_core/events/EdgeEvents.hpp>
-#include <envire_core/events/GraphEventPublisher.hpp>
+#include "../events/EdgeEvents.hpp"
+#include "../events/GraphEventPublisher.hpp"
 
 
 namespace envire { namespace core
