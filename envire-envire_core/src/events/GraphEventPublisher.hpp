@@ -33,7 +33,7 @@
 
 #pragma once
 #include <vector>
-#include "../events/GraphEvent.hpp"
+#include "GraphEvent.hpp"
 
 namespace envire { namespace core
 {

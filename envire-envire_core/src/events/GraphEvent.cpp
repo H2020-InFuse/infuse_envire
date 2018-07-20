@@ -24,7 +24,7 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#include <envire_core/events/GraphEvent.hpp>
+#include "GraphEvent.hpp"
 #include <ostream>
 
 namespace envire { namespace core

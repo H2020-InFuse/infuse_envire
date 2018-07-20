@@ -25,7 +25,7 @@
 //
 
 #pragma once
-#include <envire_core/events/GraphEventExceptions.hpp>
+#include "GraphEventExceptions.hpp"
 
 namespace envire { namespace core
 {
