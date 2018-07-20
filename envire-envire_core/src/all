@@ -1,0 +1,30 @@
+#ifndef ENVIRE_CORE_H
+#define ENVIRE_CORE_H
+
+#include "items/ItemBase.hpp"
+#include "items/Item.hpp"
+#include "items/Frame.hpp"
+#include "items/Transform.hpp"
+#include "items/Environment.hpp"
+#include "items/AlignedBoundingBox.hpp"
+#include "items/RandomGenerator.hpp"
+#include "items/SpatialItem.hpp"
+#include "items/BoundingVolume.hpp"
+#include "items/ItemMetadata.hpp"
+#include "graph/TransformGraph.hpp"
+#include "graph/EnvireGraph.hpp"
+#include "graph/Graph.hpp"
+#include "graph/GraphTypes.hpp"
+#include "graph/GraphExceptions.hpp"
+#include "graph/GraphVisitors.hpp"
+#include "events/GraphEvent.hpp"
+#include "events/GraphEventSubscriber.hpp"
+#include "events/GraphEventDispatcher.hpp"
+#include "events/GraphEventPublisher.hpp"
+#include "events/ItemAddedEvent.hpp"
+#include "events/ItemRemovedEvent.hpp"
+#include "events/FrameEvents.hpp"
+#include "events/GraphItemEventDispatcher.hpp"
+#include "events/EdgeEvents.hpp"
+
+#endif // ENVIRE_CORE_H
