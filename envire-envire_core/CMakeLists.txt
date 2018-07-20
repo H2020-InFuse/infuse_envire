@@ -6,10 +6,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 set(SOURCES
 #   src/events/GraphEvent.cpp
 #   src/events/GraphEventDispatcher.cpp
-#   src/events/GraphEventPublisher.cpp
+    src/events/GraphEventPublisher.cpp
 #   src/events/GraphEventQueue.cpp
 #   src/events/GraphEventSubscriber.cpp
-    src/graph/EnvireGraph.cpp
+        src/graph/EnvireGraph.cpp
 #   src/graph/Path.cpp
 #   src/graph/TreeView.cpp
 #   src/items/AlignedBoundingBox.cpp
@@ -17,7 +17,7 @@ set(SOURCES
 #   src/items/ItemMetadata.cpp
 #   src/plugin/ClassLoader.cpp
 #   src/serialization/Serialization.cpp
-#   src/util/Demangle.cpp
+    src/util/Demangle.cpp
 )
 
 set(HEADERS
@@ -30,16 +30,16 @@ set(HEADERS
 #   src/events/EdgeEvents.hpp
 #   src/events/FrameEvents.hpp
 #   src/events/GraphEventExceptions.hpp
-#   src/events/ItemAddedEvent.hpp
-#   src/events/ItemRemovedEvent.hpp
-    src/graph/EnvireGraph.hpp
+    src/events/ItemAddedEvent.hpp
+    src/events/ItemRemovedEvent.hpp
+        src/graph/EnvireGraph.hpp
 #   src/graph/GraphDrawing.hpp
 #   src/graph/GraphExceptions.hpp
-#   src/graph/Graph.hpp
+    src/graph/Graph.hpp
 #   src/graph/GraphTypes.hpp
-#   src/graph/GraphVisitors.hpp
+    src/graph/GraphVisitors.hpp
 #   src/graph/Path.hpp
-#   src/graph/TransformGraph.hpp
+        src/graph/TransformGraph.hpp
 #   src/graph/TreeView.hpp
 #   src/items/AlignedBoundingBox.hpp
 #   src/items/BoundingVolume.hpp
@@ -51,7 +51,7 @@ set(HEADERS
 #   src/items/RandomGenerator.hpp
 #   src/items/SpatialItem.hpp
 #   src/items/SpatioTemporal.hpp
-#   src/items/Transform.hpp
+    src/items/Transform.hpp
 #   src/plugin/ClassLoader.hpp
 #   src/plugin/Plugin.hpp
 #   src/serialization/BinaryBufferHelper.hpp
@@ -61,7 +61,7 @@ set(HEADERS
 #   src/serialization/Serialization.hpp
 #   src/serialization/SerializationRegistration.hpp
 #   src/util/Exceptions.hpp
-#   src/util/Demangle.hpp
+    src/util/Demangle.hpp
 )
 
 pkg_check_modules(BASE_LOGGING REQUIRED base-logging)

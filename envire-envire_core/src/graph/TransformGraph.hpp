@@ -10,11 +10,11 @@
 #include <cassert>
 #include <string>
 
-#include <envire_core/graph/Graph.hpp>
-#include <envire_core/graph/GraphVisitors.hpp>
-#include <envire_core/events/GraphEventPublisher.hpp>
+#include "Graph.hpp"
+#include "GraphVisitors.hpp"
+#include "../events/GraphEventPublisher.hpp"
 #include <boost_serialization/BoostTypes.hpp>
-#include <envire_core/items/Transform.hpp>
+#include "../items/Transform.hpp"
 
 
 
