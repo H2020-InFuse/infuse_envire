@@ -25,7 +25,7 @@
 //
 
 #pragma once
-#include <envire_core/events/GraphEventSubscriber.hpp>
+#include "GraphEventSubscriber.hpp"
 
 
 namespace envire { namespace core
