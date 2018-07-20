@@ -58,7 +58,7 @@ src/Pose.cpp
 )
 
 set(HEADERS
-#src/Angle.hpp
+src/Angle.hpp
 #src/CircularBuffer.hpp
 #src/Deprecated.hpp
     src/Eigen.hpp
