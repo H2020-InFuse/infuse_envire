@@ -26,8 +26,8 @@
 
 #pragma once
 
-#include <envire_core/items/Frame.hpp>
-#include <envire_core/events/GraphEvent.hpp>
+#include "../items/Frame.hpp"
+#include "GraphEvent.hpp"
 
 namespace envire { namespace core
 {

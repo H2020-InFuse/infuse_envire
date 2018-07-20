@@ -27,8 +27,8 @@ set(HEADERS
 #src/events/GraphEventQueue.hpp
     src/events/GraphEventSubscriber.hpp
 #src/events/GraphItemEventDispatcher.hpp
-src/events/EdgeEvents.hpp
-src/events/FrameEvents.hpp
+    src/events/EdgeEvents.hpp
+    src/events/FrameEvents.hpp
 src/events/GraphEventExceptions.hpp
 src/events/ItemAddedEvent.hpp
 src/events/ItemRemovedEvent.hpp
@@ -44,7 +44,7 @@ src/graph/TreeView.hpp
 #src/items/AlignedBoundingBox.hpp
 #src/items/BoundingVolume.hpp
 #src/items/Environment.hpp
-#src/items/Frame.hpp
+src/items/Frame.hpp
 src/items/ItemBase.hpp
 #src/items/Item.hpp
 #src/items/ItemMetadata.hpp
