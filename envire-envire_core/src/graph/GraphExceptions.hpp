@@ -28,7 +28,7 @@
 
 #include <stdexcept>
 #include <string>
-#include <envire_core/items/Frame.hpp>
+#include "../items/Frame.hpp"
 #include <boost/uuid/uuid.hpp>
 
 namespace envire { namespace core

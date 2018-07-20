@@ -34,7 +34,7 @@ set(HEADERS
     src/events/ItemRemovedEvent.hpp
     src/graph/EnvireGraph.hpp
 #src/graph/GraphDrawing.hpp
-src/graph/GraphExceptions.hpp
+    src/graph/GraphExceptions.hpp
 src/graph/Graph.hpp
 src/graph/GraphTypes.hpp
 src/graph/GraphVisitors.hpp
