@@ -17,7 +17,7 @@ set(SOURCES
 #src/items/ItemMetadata.cpp
 #src/plugin/ClassLoader.cpp
 #src/serialization/Serialization.cpp
-src/util/Demangle.cpp
+    src/util/Demangle.cpp
 )
 
 set(HEADERS
