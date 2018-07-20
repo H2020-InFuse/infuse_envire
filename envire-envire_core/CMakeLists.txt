@@ -10,8 +10,8 @@ set(SOURCES
 #src/events/GraphEventQueue.cpp
     src/events/GraphEventSubscriber.cpp
     src/graph/EnvireGraph.cpp
-#src/graph/Path.cpp
-#src/graph/TreeView.cpp
+    src/graph/Path.cpp
+    src/graph/TreeView.cpp
 #src/items/AlignedBoundingBox.cpp
 src/items/ItemBase.cpp
 #src/items/ItemMetadata.cpp
@@ -26,7 +26,7 @@ set(HEADERS
     src/events/GraphEventPublisher.hpp
 #src/events/GraphEventQueue.hpp
     src/events/GraphEventSubscriber.hpp
-#src/events/GraphItemEventDispatcher.hpp
+    src/events/GraphItemEventDispatcher.hpp
     src/events/EdgeEvents.hpp
     src/events/FrameEvents.hpp
     src/events/GraphEventExceptions.hpp
@@ -38,9 +38,9 @@ set(HEADERS
     src/graph/Graph.hpp
     src/graph/GraphTypes.hpp
     src/graph/GraphVisitors.hpp
-src/graph/Path.hpp
+    src/graph/Path.hpp
     src/graph/TransformGraph.hpp
-src/graph/TreeView.hpp
+    src/graph/TreeView.hpp
 #src/items/AlignedBoundingBox.hpp
 #src/items/BoundingVolume.hpp
 src/items/Environment.hpp

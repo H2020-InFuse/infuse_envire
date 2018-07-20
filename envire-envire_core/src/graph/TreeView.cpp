@@ -24,7 +24,7 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#include <envire_core/graph/TreeView.hpp>
+#include "TreeView.hpp"
 
 namespace envire { namespace core
 {

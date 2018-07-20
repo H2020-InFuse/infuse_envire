@@ -26,7 +26,7 @@
 
 #pragma once
 
-#include <envire_core/graph/GraphTypes.hpp>
+#include "GraphTypes.hpp"
 
 #include <glog/logging.h>
 
