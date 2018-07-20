@@ -43,7 +43,7 @@ set(HEADERS
     src/graph/TreeView.hpp
 #src/items/AlignedBoundingBox.hpp
 #src/items/BoundingVolume.hpp
-src/items/Environment.hpp
+    src/items/Environment.hpp
 src/items/Frame.hpp
 src/items/ItemBase.hpp
 #src/items/Item.hpp
