@@ -51,7 +51,7 @@ set(HEADERS
     src/items/RandomGenerator.hpp
 #src/items/SpatialItem.hpp
 #src/items/SpatioTemporal.hpp
-src/items/Transform.hpp
+    src/items/Transform.hpp
 #src/plugin/ClassLoader.hpp
 #src/plugin/Plugin.hpp
 #src/serialization/BinaryBufferHelper.hpp
