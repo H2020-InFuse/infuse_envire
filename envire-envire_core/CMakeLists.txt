@@ -9,7 +9,7 @@ set(SOURCES
 #   src/events/GraphEventPublisher.cpp
 #   src/events/GraphEventQueue.cpp
 #   src/events/GraphEventSubscriber.cpp
-#   src/graph/EnvireGraph.cpp
+    src/graph/EnvireGraph.cpp
 #   src/graph/Path.cpp
 #   src/graph/TreeView.cpp
 #   src/items/AlignedBoundingBox.cpp
@@ -32,7 +32,7 @@ set(HEADERS
 #   src/events/GraphEventExceptions.hpp
 #   src/events/ItemAddedEvent.hpp
 #   src/events/ItemRemovedEvent.hpp
-#   src/graph/EnvireGraph.hpp
+    src/graph/EnvireGraph.hpp
 #   src/graph/GraphDrawing.hpp
 #   src/graph/GraphExceptions.hpp
 #   src/graph/Graph.hpp

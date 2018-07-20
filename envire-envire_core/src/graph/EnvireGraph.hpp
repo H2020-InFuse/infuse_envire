@@ -26,11 +26,11 @@
 
 #pragma once
 
-#include <envire_core/graph/TransformGraph.hpp>
-#include <envire_core/items/Frame.hpp>
-#include <envire_core/events/ItemAddedEvent.hpp>
-#include <envire_core/events/ItemRemovedEvent.hpp>
-#include <envire_core/util/Demangle.hpp>
+#include "TransformGraph.hpp"
+#include "../items/Frame.hpp"
+#include "../events/ItemAddedEvent.hpp"
+#include "../events/ItemRemovedEvent.hpp"
+#include "../util/Demangle.hpp"
 
 #include <typeindex>
 #include <typeinfo>

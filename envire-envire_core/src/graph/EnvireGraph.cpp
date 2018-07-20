@@ -25,7 +25,7 @@
 //
 
 
-#include <envire_core/graph/EnvireGraph.hpp>
+#include "EnvireGraph.hpp"
 #include <fstream>
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/archive/binary_iarchive.hpp>
