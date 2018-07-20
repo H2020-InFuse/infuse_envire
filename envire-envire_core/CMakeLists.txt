@@ -30,7 +30,7 @@ set(HEADERS
     src/events/EdgeEvents.hpp
     src/events/FrameEvents.hpp
     src/events/GraphEventExceptions.hpp
-src/events/ItemAddedEvent.hpp
+    src/events/ItemAddedEvent.hpp
 src/events/ItemRemovedEvent.hpp
     src/graph/EnvireGraph.hpp
 #src/graph/GraphDrawing.hpp
