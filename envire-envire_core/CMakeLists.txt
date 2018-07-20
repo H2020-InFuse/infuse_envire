@@ -37,7 +37,7 @@ set(HEADERS
     src/graph/GraphExceptions.hpp
     src/graph/Graph.hpp
     src/graph/GraphTypes.hpp
-src/graph/GraphVisitors.hpp
+    src/graph/GraphVisitors.hpp
 src/graph/Path.hpp
     src/graph/TransformGraph.hpp
 src/graph/TreeView.hpp

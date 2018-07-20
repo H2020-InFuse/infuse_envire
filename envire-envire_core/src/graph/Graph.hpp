@@ -36,11 +36,11 @@
 #include <boost/graph/copy.hpp>
 #include <boost/concept_check.hpp>
 
-#include "../graph/GraphTypes.hpp"
-#include "../graph/TreeView.hpp"
-#include "../graph/GraphExceptions.hpp"
-#include "../graph/GraphVisitors.hpp"
-#include "../graph/Path.hpp"
+#include "GraphTypes.hpp"
+#include "TreeView.hpp"
+#include "GraphExceptions.hpp"
+#include "GraphVisitors.hpp"
+#include "Path.hpp"
 
 
 namespace envire { namespace core
