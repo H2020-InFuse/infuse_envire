@@ -82,12 +82,21 @@ foreach(librarypath ${BASE_TYPES_LIBRARY_DIRS})
     link_directories(${librarypath})
 endforeach()
 
+pkg_check_modules(BOOST_SERIALIZATION REQUIRED boost_serialization)
+foreach(includepath ${BOOST_SERIALIZATION_INCLUDE_DIRS})
+    include_directories(${includepath})
+endforeach()
+foreach(librarypath ${BOOST_SERIALIZATION_LIBRARY_DIRS})
+    link_directories(${librarypath})
+endforeach()
+
 set(LIBRARY_NAME envire-core)
 set(DEPENDENCIES "base-logging base-types")
 add_library(${LIBRARY_NAME} SHARED ${SOURCES})
 target_link_libraries(${LIBRARY_NAME}
     ${BASE_LOGGING_LIBRARIES}
     ${BASE_TYPES_LIBRARIES}
+    ${BOOST_SERIALIZATION_LIBRARIES}
 )
 
 set(CMAKE_MODULE_PATH $ENV{CMAKE_MODULE_PATH})

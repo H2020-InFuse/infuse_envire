@@ -8,11 +8,11 @@ set(SOURCES
 
 set(HEADERS
 #src/BaseNumeric.hpp
-#src/BaseTypes.hpp
+    src/BaseTypes.hpp
     src/BoostTypes.hpp
 #src/ClassVersion.hpp
     src/DynamicSizeSerialization.hpp
-#src/EigenTypes.hpp
+    src/EigenTypes.hpp
 )
 
 # find_package(PkgConfig)
@@ -26,7 +26,7 @@ set(HEADERS
 # endforeach()
 
 set(LIBRARY_NAME boost_serialization)
-set(DEPENDENCIES "")
+set(DEPENDENCIES "eigen3")
 # add_library(${LIBRARY_NAME} SHARED ${SOURCES})
 # target_link_libraries(${LIBRARY_NAMES}
 #     ${BASE_LOGGING_LIBRARIES}
