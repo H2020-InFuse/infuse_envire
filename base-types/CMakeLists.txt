@@ -7,8 +7,6 @@ set(SOURCES
 #src/Angle.cpp
 #src/CircularBuffer.cpp
 #src/Deprecated.cpp
-#src/Eigen.cpp
-#src/Float.cpp
 #src/JointLimitRange.cpp
 #src/JointLimits.cpp
 #src/JointState.cpp
@@ -18,7 +16,7 @@ set(SOURCES
 #src/Matrix.cpp
 #src/NamedVector.cpp
 #src/Point.cpp
-#src/Pose.cpp
+src/Pose.cpp
 #src/Pressure.cpp
 #src/Singleton.cpp
 #src/Spline.cpp
@@ -27,7 +25,7 @@ set(SOURCES
 #src/TimeMark.cpp
 #src/Timeout.cpp
 #src/Trajectory.cpp
-src/TransformWithCovariance.cpp
+    src/TransformWithCovariance.cpp
 #src/TwistWithCovariance.cpp
 #src/Waypoint.cpp
 #src/Wrench.cpp
@@ -63,8 +61,8 @@ set(HEADERS
 #src/Angle.hpp
 #src/CircularBuffer.hpp
 #src/Deprecated.hpp
-#src/Eigen.hpp
-#src/Float.hpp
+src/Eigen.hpp
+src/Float.hpp
 #src/JointLimitRange.hpp
 #src/JointLimits.hpp
 #src/JointState.hpp
@@ -74,7 +72,7 @@ set(HEADERS
 #src/Matrix.hpp
 #src/NamedVector.hpp
 #src/Point.hpp
-#src/Pose.hpp
+src/Pose.hpp
 #src/Pressure.hpp
 #src/Singleton.hpp
 #src/Spline.hpp
@@ -83,7 +81,7 @@ set(HEADERS
 #src/TimeMark.hpp
 #src/Timeout.hpp
 #src/Trajectory.hpp
-src/TransformWithCovariance.hpp
+    src/TransformWithCovariance.hpp
 #src/TwistWithCovariance.hpp
 #src/Waypoint.hpp
 #src/Wrench.hpp
