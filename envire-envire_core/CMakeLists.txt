@@ -61,7 +61,7 @@ set(HEADERS
 #src/serialization/Serialization.hpp
 #src/serialization/SerializationRegistration.hpp
 #src/util/Exceptions.hpp
-src/util/Demangle.hpp
+    src/util/Demangle.hpp
 )
 
 pkg_check_modules(BASE_LOGGING REQUIRED base-logging)

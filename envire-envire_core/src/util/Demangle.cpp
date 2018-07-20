@@ -24,7 +24,7 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#include <envire_core/util/Demangle.hpp>
+#include "Demangle.hpp"
 
 namespace envire { namespace core
 {
