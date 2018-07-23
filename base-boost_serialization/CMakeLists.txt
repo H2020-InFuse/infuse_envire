@@ -15,22 +15,18 @@ set(HEADERS
     src/EigenTypes.hpp
 )
 
-# find_package(PkgConfig)
+find_package(PkgConfig REQUIRED)
 
-# pkg_check_modules(BASE_LOGGING REQUIRED base-logging)
-# foreach(includepath ${BASE_LOGGING_INCLUDE_DIRS})
-#     include_directories(${includepath})
-# endforeach()
-# foreach(librarypath ${BASE_LOGGING_LIBRARY_DIRS})
-#     link_directories(${librarypath})
-# endforeach()
+pkg_check_modules(BASE_TYPES REQUIRED base-types)
+foreach(includepath ${BASE_TYPES_INCLUDE_DIRS})
+    include_directories(${includepath})
+endforeach()
+foreach(librarypath ${BASE_TYPES_LIBRARY_DIRS})
+    link_directories(${librarypath})
+endforeach()
 
 set(LIBRARY_NAME boost_serialization)
-set(DEPENDENCIES "eigen3")
-# add_library(${LIBRARY_NAME} SHARED ${SOURCES})
-# target_link_libraries(${LIBRARY_NAMES}
-#     ${BASE_LOGGING_LIBRARIES}
-# )
+set(DEPENDENCIES "base-types")
 
 set(CMAKE_MODULE_PATH $ENV{CMAKE_MODULE_PATH})
 message(STATUS ${CMAKE_MODULE_PATH})

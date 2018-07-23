@@ -74,6 +74,14 @@ find_package(PkgConfig)
 #     link_directories(${librarypath})
 # endforeach()
 
+pkg_check_modules(BASE_LOGGING REQUIRED base-logging)
+foreach(includepath ${BASE_LOGGING_INCLUDE_DIRS})
+    include_directories(${includepath})
+endforeach()
+foreach(librarypath ${BASE_LOGGING_LIBRARY_DIRS})
+    link_directories(${librarypath})
+endforeach()
+
 pkg_check_modules(BASE_TYPES REQUIRED base-types)
 foreach(includepath ${BASE_TYPES_INCLUDE_DIRS})
     include_directories(${includepath})
@@ -91,7 +99,7 @@ foreach(librarypath ${BOOST_SERIALIZATION_LIBRARY_DIRS})
 endforeach()
 
 set(LIBRARY_NAME envire_core)
-set(DEPENDENCIES "base-logging base-types libglog")
+set(DEPENDENCIES "base-logging base-types boost_serialization")
 add_library(${LIBRARY_NAME} SHARED ${SOURCES})
 target_link_libraries(${LIBRARY_NAME}
     ${BASE_LOGGING_LIBRARIES}
