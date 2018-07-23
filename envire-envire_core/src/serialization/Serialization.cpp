@@ -144,7 +144,7 @@ bool Serialization::loadAllPluginLibraries()
         ClassLoader* loader = ClassLoader::getInstance();
         return loader->loadAllEnvireItemLibraries();
     #else
-        LOG(ERROR) << "Unable to load plugin library from item " /*<< class_name*/
+        LOG(ERROR) << "Unable to load plugin library from item " /*<< class_name class name not declared*/
                 << " because plugin support is disabled (code has been compiled with ENABLE_PLUGINS=OFF).";
         return false;
     #endif
