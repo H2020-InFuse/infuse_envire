@@ -34,7 +34,7 @@
 #include <sstream>
 #include <unordered_map>
 #include <typeindex>
-#include <glog/logging.h>
+//#include <glog/logging.h>
     
 #include "ItemBase.hpp"
 #include "RandomGenerator.hpp"

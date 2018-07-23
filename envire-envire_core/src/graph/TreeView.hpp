@@ -28,7 +28,7 @@
 
 #include "GraphTypes.hpp"
 
-#include <glog/logging.h>
+//#include <glog/logging.h>
 
 namespace envire { namespace core
 {
