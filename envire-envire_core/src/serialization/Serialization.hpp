@@ -31,8 +31,15 @@
 #include "../items/ItemBase.hpp"
 
 #include <boost/serialization/nvp.hpp>
-#include <glog/logging.h>
+//#include <glog/logging.h>
 #include <map>
+
+#include <iostream>
+
+// Macros to replace google logging
+#define LOG(log_type) LOG_##log_type
+#define LOG_ERROR std::cerr<<"\n"
+#define LOG_INFO std::cout<<"\n"
 
 namespace envire { namespace core
 {
