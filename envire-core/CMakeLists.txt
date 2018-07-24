@@ -3,6 +3,26 @@ project (envire-core VERSION 0.1)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
+#set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;$ENV{CMAKE_MODULE_PATH}")
+
+find_package(Boost COMPONENTS serialization filesystem system)
+
+foreach(includepath ${Boost_INCLUDE_DIRS})
+    set(PKGCONFIG_CFLAGS "${PKGCONFIG_CFLAGS} -I${includepath}")
+    include_directories(${includepath})
+endforeach()
+foreach(librarypath ${Boost_LIBRARY_DIRS})
+    set(PKGCONFIG_LIBS "${PKGCONFIG_LIBS} -L${librarypath}")
+    link_directories(${librarypath})
+endforeach()
+foreach(library ${Boost_LIBRARIES})
+    set(PKGCONFIG_LIBS "${PKGCONFIG_LIBS} ${library}")
+endforeach()
+
+message(STATUS ${PKGCONFIG_CFLAGS})
+message(STATUS ${PKGCONFIG_LIBS})
+
+
 set(SOURCES
     src/events/GraphEvent.cpp
     src/events/GraphEventDispatcher.cpp
@@ -75,15 +95,15 @@ foreach(librarypath ${BOOST_SERIALIZATION_LIBRARY_DIRS})
 endforeach()
 
 set(LIBRARY_NAME envire_core)
-set(DEPENDENCIES "base-logging base-types boost_serialization")
+set(PKGCONFIG_REQUIRES "base-logging base-types boost_serialization")
 add_library(${LIBRARY_NAME} SHARED ${SOURCES})
 target_link_libraries(${LIBRARY_NAME}
     ${BASE_LOGGING_LIBRARIES}
     ${BASE_TYPES_LIBRARIES}
-    ${BOOST_SERIALIZATION_LIBRARIES}
+    ${Boost_LIBRARIES}
 )
 
-set(CMAKE_MODULE_PATH $ENV{CMAKE_MODULE_PATH})
+set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};$ENV{CMAKE_MODULE_PATH}")
 message(STATUS ${CMAKE_MODULE_PATH})
 include(install-lib)
 

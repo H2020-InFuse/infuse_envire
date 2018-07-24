@@ -4,8 +4,8 @@ includedir=@CMAKE_INSTALL_PREFIX@/include
 Name: @LIBRARY_NAME@
 Description: .pc file for @LIBRARY_NAME@.
 Version: @PROJECT_VERSION@
-Requires: @DEPENDENCIES@
+Requires: @PKGCONFIG_REQUIRES@
 
-Libs: -L${libdir} -l@LIBRARY_NAME@
-Cflags: -I${includedir}
+Libs: -L${libdir} -l@LIBRARY_NAME@ @PKGCONFIG_LIBS@
+Cflags: -I${includedir} @PKGCONFIG_CFLAGS@
 

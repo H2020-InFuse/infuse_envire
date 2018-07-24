@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 3.5)
 project (base-types VERSION 0.1)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
 set(SOURCES
     src/Angle.cpp
@@ -30,7 +30,7 @@ foreach(librarypath ${EIGEN3_LIBRARY_DIRS})
 endforeach()
 
 set(LIBRARY_NAME base-types)
-set(DEPENDENCIES "eigen3")
+set(PKGCONFIG_REQUIRES "eigen3")
 add_library(${LIBRARY_NAME} SHARED ${SOURCES})
 target_link_libraries(${LIBRARY_NAME}
     ${EIGEN3_LIBRARIES}

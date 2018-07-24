@@ -5,7 +5,9 @@ if(TARGET ${LIBRARY_NAME})
 install(CODE "
     set(LIBRARY_NAME ${LIBRARY_NAME})
     set(PROJECT_VERSION ${PROJECT_VERSION})
-    set(DEPENDENCIES \"${DEPENDENCIES}\")
+    set(PKGCONFIG_REQUIRES \"${PKGCONFIG_REQUIRES}\")
+    set(PKGCONFIG_LIBS \"${PKGCONFIG_LIBS}\")
+    set(PKGCONFIG_CFLAGS \"${PKGCONFIG_CFLAGS}\")
     foreach(header ${HEADERS})
         file(RELATIVE_PATH rpath ${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/\${header})
         get_filename_component(rpath \${rpath} DIRECTORY)
@@ -27,7 +29,9 @@ message(STATUS "Installing pure header library")
 install(CODE "
     set(LIBRARY_NAME ${LIBRARY_NAME})
     set(PROJECT_VERSION ${PROJECT_VERSION})
-    set(DEPENDENCIES \"${DEPENDENCIES}\")
+    set(PKGCONFIG_REQUIRES \"${PKGCONFIG_REQUIRES}\")
+    set(PKGCONFIG_LIBS \"${PKGCONFIG_LIBS}\")
+    set(PKGCONFIG_CFLAGS \"${PKGCONFIG_CFLAGS}\")
     foreach(header ${HEADERS})
         file(RELATIVE_PATH rpath ${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/\${header})
         get_filename_component(rpath \${rpath} DIRECTORY)
@@ -37,3 +41,5 @@ install(CODE "
     configure_file(${CMAKE_CURRENT_LIST_DIR}/template-header-lib.pc.in ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig/${LIBRARY_NAME}.pc @ONLY)")
 
 endif()
+
+
