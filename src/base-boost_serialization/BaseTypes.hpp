@@ -1,7 +1,7 @@
 #pragma once
 
 #include "EigenTypes.hpp"
-#include <base-types/TransformWithCovariance.hpp>
+#include "../base-types/TransformWithCovariance.hpp"
 
 namespace boost { namespace serialization
 {

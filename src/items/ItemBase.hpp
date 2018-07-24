@@ -33,10 +33,11 @@
 #include <boost/serialization/access.hpp>
 #include <boost/serialization/export.hpp>
 #include <boost/signals2.hpp>
-#include <base-types/Time.hpp>
 #include <string>
 #include <type_traits>
 #include <typeindex>
+
+#include "../base-types/Time.hpp"
 
 namespace envire { namespace core
 {
