@@ -26,12 +26,6 @@
 
 #pragma once
 
-#include "TransformGraph.hpp"
-#include "../items/Frame.hpp"
-#include "../events/ItemAddedEvent.hpp"
-#include "../events/ItemRemovedEvent.hpp"
-#include "../util/Demangle.hpp"
-
 #include <typeindex>
 #include <typeinfo>
 #include <type_traits>
@@ -39,9 +33,14 @@
 
 #define BOOST_RESULT_OF_USE_DECLTYPE //this is important for the transform_iterator
 #include <boost/iterator/transform_iterator.hpp>
-#include <boost_serialization/BoostTypes.hpp>
 #include <boost/lexical_cast.hpp>
 
+#include "TransformGraph.hpp"
+#include "../items/Frame.hpp"
+#include "../events/ItemAddedEvent.hpp"
+#include "../events/ItemRemovedEvent.hpp"
+#include "../util/Demangle.hpp"
+#include "../base-boost_serialization/BoostTypes.hpp"
 
 namespace envire { namespace core {
 

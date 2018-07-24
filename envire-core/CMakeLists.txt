@@ -66,6 +66,10 @@ set(HEADERS
     src/serialization/SerializationHandle.hpp
     src/serialization/Serialization.hpp
     src/util/Demangle.hpp
+    src/base-boost_serialization/BaseTypes.hpp
+    src/base-boost_serialization/BoostTypes.hpp
+    src/base-boost_serialization/DynamicSizeSerialization.hpp
+    src/base-boost_serialization/EigenTypes.hpp
 )
 
 find_package(PkgConfig)
@@ -86,16 +90,8 @@ foreach(librarypath ${BASE_TYPES_LIBRARY_DIRS})
     link_directories(${librarypath})
 endforeach()
 
-pkg_check_modules(BOOST_SERIALIZATION REQUIRED boost_serialization)
-foreach(includepath ${BOOST_SERIALIZATION_INCLUDE_DIRS})
-    include_directories(${includepath})
-endforeach()
-foreach(librarypath ${BOOST_SERIALIZATION_LIBRARY_DIRS})
-    link_directories(${librarypath})
-endforeach()
-
 set(LIBRARY_NAME envire_core)
-set(PKGCONFIG_REQUIRES "base-logging base-types boost_serialization")
+set(PKGCONFIG_REQUIRES "base-logging base-types")
 add_library(${LIBRARY_NAME} SHARED ${SOURCES})
 target_link_libraries(${LIBRARY_NAME}
     ${BASE_LOGGING_LIBRARIES}

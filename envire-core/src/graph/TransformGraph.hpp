@@ -13,7 +13,7 @@
 #include "Graph.hpp"
 #include "GraphVisitors.hpp"
 #include "../events/GraphEventPublisher.hpp"
-#include <boost_serialization/BoostTypes.hpp>
+#include "../base-boost_serialization/BoostTypes.hpp"
 #include "../items/Transform.hpp"
 
 

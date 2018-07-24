@@ -38,8 +38,8 @@
     
 #include "ItemBase.hpp"
 #include "RandomGenerator.hpp"
-#include <boost_serialization/BoostTypes.hpp>
-#include <boost_serialization/DynamicSizeSerialization.hpp>
+#include "../base-boost_serialization/BoostTypes.hpp"
+#include "../base-boost_serialization/DynamicSizeSerialization.hpp"
 #include "../serialization/Serialization.hpp"
 #include "../util/Demangle.hpp"
 

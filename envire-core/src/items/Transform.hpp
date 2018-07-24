@@ -32,11 +32,12 @@
 #include <sstream>
 #include <boost/serialization/access.hpp>
 #include <boost/serialization/nvp.hpp>
-#include <boost_serialization/BaseTypes.hpp>
 #include <boost/format.hpp>
 
 #include <base-types/Time.hpp>
 #include <base-types/TransformWithCovariance.hpp>
+
+#include "../base-boost_serialization/BaseTypes.hpp"
 
 namespace envire { namespace core
 {

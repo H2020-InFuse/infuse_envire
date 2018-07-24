@@ -17,7 +17,8 @@
 #include <boost/serialization/access.hpp>
 #include <boost/serialization/string.hpp>
 #include <boost/serialization/nvp.hpp>
-#include <boost_serialization/BoostTypes.hpp>
+
+#include "../base-boost_serialization/BoostTypes.hpp"
 
 namespace envire { namespace core
 {
