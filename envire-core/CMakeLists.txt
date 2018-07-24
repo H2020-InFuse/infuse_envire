@@ -34,6 +34,7 @@ set(SOURCES
     src/items/ItemBase.cpp
     src/serialization/Serialization.cpp
     src/util/Demangle.cpp
+    src/base-logging/logging/logging_printf_style.cpp
 )
 
 set(HEADERS
@@ -70,6 +71,11 @@ set(HEADERS
     src/base-boost_serialization/BoostTypes.hpp
     src/base-boost_serialization/DynamicSizeSerialization.hpp
     src/base-boost_serialization/EigenTypes.hpp
+    src/base-logging/Logging.hpp
+    src/base-logging/Singleton.hpp
+    src/base-logging/logging/logging_iostream_style.h
+    src/base-logging/logging/logging_printf_style.h
+    src/base-logging/logging/terminal_colors.h
 )
 
 find_package(PkgConfig)
