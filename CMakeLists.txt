@@ -71,6 +71,7 @@ set(HEADERS
 
 find_package(Eigen3 REQUIRED)
 find_package(Boost COMPONENTS serialization filesystem system)
+add_definitions(${EIGEN3_DEFINITIONS})
 
 include_directories(
     ${EIGEN3_INCLUDE_DIR}
@@ -82,6 +83,7 @@ target_link_libraries(${PROJECT_NAME}
     ${Boost_LIBRARIES}
     ${EIGEN3_LIBRARIES}
 )
+
 
 
 #Prepare .pc file
