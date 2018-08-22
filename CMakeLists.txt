@@ -82,7 +82,6 @@ target_link_libraries(${PROJECT_NAME}
     ${Boost_LIBRARIES}
     ${EIGEN3_LIBRARIEs}
 )
-set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${HEADERS}")
 
 #Prepare .pc file
 set(REQUIRED_COMPONENTS "eigen3")
@@ -163,8 +162,13 @@ install(
     ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
     RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
     INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
-    PUBLIC_HEADER DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}"
 )
+
+foreach(header ${HEADERS})
+    file(RELATIVE_PATH rpath ${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/${header})
+    get_filename_component(rpath ${rpath} DIRECTORY)
+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/${header} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/${LIBRARY_NAME}/${rpath})
+endforeach()
 
 
 # Config
@@ -173,6 +177,14 @@ install(
 install(
     FILES "${project_config}" "${version_config}"
     DESTINATION "${config_install_dir}"
+)
+
+install(CODE "
+    foreach(header ${HEADERS})
+        file(RELATIVE_PATH rpath ${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/\${header})
+        get_filename_component(rpath \${rpath} DIRECTORY)
+        file(INSTALL ${CMAKE_CURRENT_SOURCE_DIR}/\${header} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/${PROJECT_NAME}/\${rpath})
+    endforeach()"
 )
 
 
