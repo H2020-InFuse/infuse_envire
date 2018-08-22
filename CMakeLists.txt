@@ -1,6 +1,7 @@
 cmake_minimum_required (VERSION 3.5)
 project (infuse_envire VERSION 0.1)
 
+set(PKG_DESCRIPTION "Minimal version of DFKI EnVire")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
 set(SOURCES
@@ -68,57 +69,123 @@ set(HEADERS
     src/base-types/TransformWithCovariance.hpp
 )
 
-find_package(PkgConfig)
-pkg_check_modules(EIGEN3 REQUIRED eigen3)
-foreach(includepath ${EIGEN3_INCLUDE_DIRS})
-    include_directories(${includepath})
-endforeach()
-foreach(librarypath ${EIGEN3_LIBRARY_DIRS})
-    link_directories(${librarypath})
-endforeach()
-
+find_package(Eigen3 REQUIRED)
 find_package(Boost COMPONENTS serialization filesystem system)
-foreach(includepath ${Boost_INCLUDE_DIRS})
-    set(PKGCONFIG_CFLAGS "${PKGCONFIG_CFLAGS} -I${includepath}")
-    include_directories(${includepath})
-endforeach()
-foreach(librarypath ${Boost_LIBRARY_DIRS})
-    set(PKGCONFIG_LIBS "${PKGCONFIG_LIBS} -L${librarypath}")
-    link_directories(${librarypath})
-endforeach()
-foreach(library ${Boost_LIBRARIES})
-    set(PKGCONFIG_LIBS "${PKGCONFIG_LIBS} ${library}")
-endforeach()
 
-message(STATUS ${PKGCONFIG_CFLAGS})
-message(STATUS ${PKGCONFIG_LIBS})
+include_directories(
+    ${EIGEN3_INCLUDE_DIR}
+    ${Boost_INCLUDE_DIR}
+    )
 
-
-set(LIBRARY_NAME infuse_envire)
-set(PKGCONFIG_REQUIRES "eigen3")
-add_library(${LIBRARY_NAME} SHARED ${SOURCES})
-target_link_libraries(${LIBRARY_NAME}
+add_library(${PROJECT_NAME} SHARED ${SOURCES})
+target_link_libraries(${PROJECT_NAME}
     ${Boost_LIBRARIES}
-    ${EIGEN3_LIBRARIES}
+    ${EIGEN3_LIBRARIEs}
+)
+set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${HEADERS}")
+
+#Prepare .pc file
+set(REQUIRED_COMPONENTS "eigen3")
+set(ADDITIONAL_LINKS "")
+
+foreach(library ${Boost_LIBRARIES})
+    set(ADDITIONAL_LINKS "${ADDITIONAL_LINKS}${library} ")
+endforeach()
+
+
+include(GNUInstallDirs)
+set(config_install_dir "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")
+
+# This is exclusive for pkg-config
+set(pkgconfig_install_dir "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
+
+
+set(generated_dir "${CMAKE_CURRENT_BINARY_DIR}/generated")
+
+# Configuration
+set(version_config "${generated_dir}/${PROJECT_NAME}ConfigVersion.cmake")
+set(project_config "${generated_dir}/${PROJECT_NAME}Config.cmake")
+set(pkgconfig_file "${generated_dir}/${PROJECT_NAME}.pc")
+set(TARGETS_EXPORT_NAME "${PROJECT_NAME}Targets")
+
+
+# Include module with fuctions:
+#   * 'write_basic_package_version_file'
+#   * 'configure_package_config_file'
+include(CMakePackageConfigHelpers)
+
+
+# Configure '<PROJECT-NAME>ConfigVersion.cmake'
+# Uses:
+#   * PROJECT_VERSION
+write_basic_package_version_file(
+  "${version_config}" COMPATIBILITY SameMajorVersion
+)
+
+# Configure '<PROJECT-NAME>Config.cmake'
+# Uses variables:
+#   * TARGETS_EXPORT_NAME
+#   * PROJECT_NAME
+#   * CMAKE_INSTALL_INCLUDEDIR
+configure_package_config_file(
+    "cmake/Config.cmake.in"
+    "${project_config}"
+    INSTALL_DESTINATION "${config_install_dir}"
+    PATH_VARS
+      CMAKE_INSTALL_INCLUDEDIR
+)
+
+# Configure '<PROJECT-NAME>.pc'
+# Uses variables:
+#   * PROJECT_NAME
+#   * PROJECT_VERSION
+#   * CMAKE_INSTALL_PREFIX
+#   * CMAKE_INSTALL_LIBDIR
+#   * CMAKE_INSTALL_INCLUDEDIR
+
+configure_file(
+    "cmake/pkgconfig.pc.cmakein"
+    "${pkgconfig_file}" @ONLY
+)
+
+####
+# Installation
+
+
+# Targets:
+#   * <prefix>/lib/lib${PROJECT_NAME}.so
+#   * header location after install: <prefix>/include/${PROJECT_NAME}/*.h
+#   * headers can be included by C++ code `#include <${PROJECT_NAME}/*.h>`
+install(
+    TARGETS ${PROJECT_NAME}
+    EXPORT "${TARGETS_EXPORT_NAME}"
+    LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+    ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+    RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
+    INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
+    PUBLIC_HEADER DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}"
 )
 
 
-# installation process (copy header files, generates a .pc file, install libraries)
-install(CODE "
-    set(LIBRARY_NAME ${LIBRARY_NAME})
-    set(PROJECT_VERSION ${PROJECT_VERSION})
-    set(PKGCONFIG_REQUIRES \"${PKGCONFIG_REQUIRES}\")
-    set(PKGCONFIG_LIBS \"${PKGCONFIG_LIBS}\")
-    set(PKGCONFIG_CFLAGS \"${PKGCONFIG_CFLAGS}\")
-    foreach(header ${HEADERS})
-        file(RELATIVE_PATH rpath ${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/\${header})
-        get_filename_component(rpath \${rpath} DIRECTORY)
-        file(INSTALL ${CMAKE_CURRENT_SOURCE_DIR}/\${header} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/${LIBRARY_NAME}/\${rpath})
-    endforeach()
-    message(STATUS \"Installing: ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig/${LIBRARY_NAME}.pc\")
-    configure_file(${CMAKE_SOURCE_DIR}/${LIBRARY_NAME}.pc.in ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig/${LIBRARY_NAME}.pc @ONLY)")
-
-install(TARGETS ${LIBRARY_NAME}
-  LIBRARY DESTINATION lib
+# Config
+#   * <prefix>/lib/cmake/${PROJECT_NAME}/${PROJECT_NAME}Config.cmake
+#   * <prefix>/lib/cmake/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake
+install(
+    FILES "${project_config}" "${version_config}"
+    DESTINATION "${config_install_dir}"
 )
 
+
+# Config
+#   * <prefix>/lib/pkgconfig/${PROJECT_NAME}.pc
+install(
+    FILES "${pkgconfig_file}"
+    DESTINATION "${pkgconfig_install_dir}")
+
+
+# Config
+#   * <prefix>/lib/cmake/infuse_cdff_types/infuse_cdff_typesTargets.cmake
+install(
+    EXPORT "${TARGETS_EXPORT_NAME}"
+    DESTINATION "${config_install_dir}"
+)
