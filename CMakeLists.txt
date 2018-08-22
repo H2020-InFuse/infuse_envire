@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.5)
-project (infuse_envire VERSION 0.1)
+project (infuse_envire VERSION 0.1.1)
 
 set(PKG_DESCRIPTION "Minimal version of DFKI EnVire")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
