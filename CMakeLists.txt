@@ -80,8 +80,9 @@ include_directories(
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
 target_link_libraries(${PROJECT_NAME}
     ${Boost_LIBRARIES}
-    ${EIGEN3_LIBRARIEs}
+    ${EIGEN3_LIBRARIES}
 )
+
 
 #Prepare .pc file
 set(REQUIRED_COMPONENTS "eigen3")
@@ -164,11 +165,14 @@ install(
     INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
 )
 
-foreach(header ${HEADERS})
-    file(RELATIVE_PATH rpath ${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/${header})
-    get_filename_component(rpath ${rpath} DIRECTORY)
-    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/${header} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/${LIBRARY_NAME}/${rpath})
-endforeach()
+## This installs the headers while converving the folder structure. Somehow intall(DIRECTORY) does not work on robotpkg
+install(CODE "
+    foreach(header ${HEADERS})
+        file(RELATIVE_PATH rpath ${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/\${header})
+        get_filename_component(rpath \${rpath} DIRECTORY)
+        file(INSTALL ${CMAKE_CURRENT_SOURCE_DIR}/\${header} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/${PROJECT_NAME}/\${rpath})
+    endforeach()"
+)
 
 
 # Config
@@ -179,13 +183,6 @@ install(
     DESTINATION "${config_install_dir}"
 )
 
-install(CODE "
-    foreach(header ${HEADERS})
-        file(RELATIVE_PATH rpath ${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/\${header})
-        get_filename_component(rpath \${rpath} DIRECTORY)
-        file(INSTALL ${CMAKE_CURRENT_SOURCE_DIR}/\${header} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/${PROJECT_NAME}/\${rpath})
-    endforeach()"
-)
 
 
 # Config
